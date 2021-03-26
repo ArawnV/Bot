@@ -81,11 +81,6 @@ local Result = Check()
  
 if Result then return end
 
-local JobID
-
-local random = math.random(1, #JobIDs)
-JobID = JobIDs[random].JobID
-
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
     if State == Enum.TeleportState.Started then
         syn.queue_on_teleport([[
@@ -95,5 +90,13 @@ game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
         ]])
     end
 end)
- 
-Event:FireServer(JobID)
+
+while true do
+	local JobID
+
+	local random = math.random(1, #JobIDs)
+	JobID = JobIDs[random].JobID
+
+	Event:FireServer(JobID)
+	wait(5)
+end
