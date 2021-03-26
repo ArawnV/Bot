@@ -56,7 +56,7 @@ local function Check()
 				Label.Text = "Collector bulundu! - " .. Collectors[tostring(Door.BrickColor)]
 				Sound:Play()
  
-				local Content = "local RS = game:GetService('ReplicatedStorage') \n local Events = RS:WaitForChild('Requests') \n local Event = Events:WaitForChild('JoinPublicServer') \n Event:FireServer(" .. game.JobId .. ")"
+				local Content = "local RS = game:GetService('ReplicatedStorage') \n local Events = RS:WaitForChild('Requests') \n local Event = Events:WaitForChild('JoinPublicServer') \n Event:FireServer('" .. game.JobId .. "')"
  
 				local JSONTable = {
 					['embeds'] = {
