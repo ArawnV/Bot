@@ -1,10 +1,10 @@
 local Player = game.Players.LocalPlayer
 
 local Collectors = {
-	[BrickColor.new("Fawn brown")] = "Desert";
-	[BrickColor.new("Smoky grey")] = "Beach";
-	[BrickColor.new("Bronze")] = "Jungle";
-	[BrickColor.new("Dark stone grey")] ="Plains" ;
+	["Fawn brown"] = "Desert";
+	["Smoky grey"] = "Beach";
+	["Bronze"] = "Jungle";
+	["Dark stone grey"] ="Plains" ;
 }
  
 local webhookURL = "https://discordapp.com/api/webhooks/824965048321179671/qwY-yAFdXiZScmTIeuuY32v1I62k5NOZFz3Hfrm1nv-m5r6wXfQ8C7Z-qOLgsG3nBmCW"
@@ -53,7 +53,7 @@ local function Check()
 	for _,Door in pairs(workspace:GetChildren()) do
 		if Door:IsA("BasePart") and Door:FindFirstChild("Exit") then
 			if Door.CanCollide == false or Door.Transparency > .1 then
-				Label.Text = "Collector bulundu! - " .. Collectors[Door.BrickColor]
+				Label.Text = "Collector bulundu! - " .. Collectors[tostring(Door.BrickColor)]
 				Sound:Play()
  
 				local Content = Collectors[Door.BrickColor] .. "\n" .. "local RS = game:GetService('ReplicatedStorage') \n local Events = RS:WaitForChild('Requests') \n local Event = Events:WaitForChild('JoinPublicServer') \n Event:FireServer(" .. game.JobId .. ")"
