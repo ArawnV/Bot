@@ -19,7 +19,7 @@ local ServerInfo = RS:WaitForChild("ServerInfo")
 local JobIDs = {}
 for i,v in pairs(ServerInfo:GetChildren()) do
 	local Players = #HTTP:JSONDecode(v.Players.Value)
-	if v.Lifespan.Value/60/60 > 2 and Players < 25 then
+	if v.Lifespan.Value/60/60 > 2 and Players < 25 and v.Name ~= tostring(game.JobId) then
 		table.insert(JobIDs, {
 			JobID = v.Name;
 			Folder = v;
