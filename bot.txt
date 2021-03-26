@@ -107,5 +107,5 @@ while true do
 
 	Event:FireServer(JobID)
 	wait(5)
-	if not Sound2.Playing then Sound2:Play() end
+	if not Sound2.IsPlaying then Sound2:Play() end
 end
