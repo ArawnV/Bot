@@ -9,6 +9,10 @@ local Collectors = {
  
 local webhookURL = "https://discordapp.com/api/webhooks/824965048321179671/qwY-yAFdXiZScmTIeuuY32v1I62k5NOZFz3Hfrm1nv-m5r6wXfQ8C7Z-qOLgsG3nBmCW"
 local HTTP = game:GetService("HttpService")
+
+if _G.WebhookURL and _G.WebhookURL ~= "" then
+	webhookURL = _G.WebhookURL
+end
  
 local RS = game:GetService("ReplicatedStorage")
 local Events = RS:WaitForChild("Requests")
