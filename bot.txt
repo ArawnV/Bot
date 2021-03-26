@@ -32,8 +32,13 @@ end
  
 local Sound = Instance.new("Sound")
 Sound.SoundId = "rbxassetid://6232606894"
---Sound.Volume = 1
+Sound.Volume = 1
 Sound.Parent = workspace
+
+local Sound2 = Instance.new("Sound")
+Sound2.SoundId = "rbxassetid://1839456913"
+--Sound2.Volume = 1
+Sound2.Parent = workspace
  
 local SG = Instance.new("ScreenGui")
 SG.DisplayOrder = 10000
@@ -102,4 +107,5 @@ while true do
 
 	Event:FireServer(JobID)
 	wait(5)
+	if not Sound2.Playing then Sound2:Play() end
 end
