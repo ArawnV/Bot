@@ -48,7 +48,7 @@ Label.Size = UDim2.new(1, 0, 0.2, 0)
 Label.TextScaled = true
 Label.TextStrokeTransparency = 0.5
 Label.BackgroundTransparency = 1
-Label.Text = "Collector yok moruk! (amogus)"
+Label.Text = "There is no collector in this server!"
 Label.Parent = SG
  
 SG.Parent = Player.PlayerGui
@@ -57,7 +57,7 @@ local function Check()
 	for _,Door in pairs(workspace:GetChildren()) do
 		if Door:IsA("BasePart") and Door:FindFirstChild("Exit") then
 			if Door.CanCollide == false or Door.Transparency > .1 then
-				Label.Text = "Collector bulundu! - " .. Collectors[tostring(Door.BrickColor)]
+				Label.Text = "Collector founded! - " .. Collectors[tostring(Door.BrickColor)]
 				Sound:Play()
  
 				local Content = "local RS = game:GetService('ReplicatedStorage') \n local Events = RS:WaitForChild('Requests') \n local Event = Events:WaitForChild('JoinPublicServer') \n Event:FireServer('" .. game.JobId .. "')"
