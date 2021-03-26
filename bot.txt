@@ -1,0 +1,99 @@
+local Player = game.Players.LocalPlayer
+
+local Collectors = {
+	[BrickColor.new("Fawn brown")] = "Desert";
+	[BrickColor.new("Smoky grey")] = "Beach";
+	[BrickColor.new("Bronze")] = "Jungle";
+	[BrickColor.new("Dark stone grey")] ="Plains" ;
+}
+ 
+local webhookURL = "https://discordapp.com/api/webhooks/824965048321179671/qwY-yAFdXiZScmTIeuuY32v1I62k5NOZFz3Hfrm1nv-m5r6wXfQ8C7Z-qOLgsG3nBmCW"
+local HTTP = game:GetService("HttpService")
+ 
+local RS = game:GetService("ReplicatedStorage")
+local Events = RS:WaitForChild("Requests")
+local Event = Events:WaitForChild("JoinPublicServer")
+ 
+local ServerInfo = RS:WaitForChild("ServerInfo")
+ 
+local JobIDs = {}
+for i,v in pairs(ServerInfo:GetChildren()) do
+	local Players = #HTTP:JSONDecode(v.Players.Value)
+	if v.Lifespan.Value/60/60 > 2 and Players < 25 then
+		table.insert(JobIDs, {
+			JobID = v.Name;
+			Folder = v;
+			ServerName = v.Name;
+			CurrentPlayers = Players;
+			Life = v.Lifespan.Value/60/60;
+		});
+	end
+end
+ 
+local Sound = Instance.new("Sound")
+Sound.SoundId = "rbxassetid://6232606894"
+Sound.Volume = 1
+Sound.Parent = workspace
+ 
+local SG = Instance.new("ScreenGui")
+SG.DisplayOrder = 10000
+SG.Name = "Alert"
+ 
+local Label = Instance.new("TextLabel")
+Label.Size = UDim2.new(1, 0, 0.2, 0)
+Label.TextScaled = true
+Label.TextStrokeTransparency = 0.5
+Label.BackgroundTransparency = 1
+Label.Text = "There is no collector in this server!"
+Label.Parent = SG
+ 
+SG.Parent = Player.PlayerGui
+ 
+local function Check()
+	for _,Door in pairs(workspace:GetChildren()) do
+		if Door:IsA("BasePart") and Door:FindFirstChild("Exit") then
+			if Door.CanCollide == false or Door.Transparency > .1 then
+				Label.Text = "There is a collector at " .. Collectors[Door.BrickColor] .. "!"
+				Sound:Play()
+ 
+				local Content = Collectors[Door.BrickColor] .. "\n" .. "local RS = game:GetService('ReplicatedStorage') \n local Events = RS:WaitForChild('Requests') \n local Event = Events:WaitForChild('JoinPublicServer') \n Event:FireServer(" .. game.JobId .. ")"
+ 
+				local JSONTable = {
+					['embeds'] = {
+						{
+							['title'] = Collectors[Door.BrickColor],
+							['description'] = Content,
+							['footer'] = {
+								['text'] = "Collector spawned!"
+							},
+						}
+					}
+				}
+				syn.request({ Url = webhookURL, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = HTTP:JSONEncode(JSONTable) })
+ 
+				return true
+			end
+		end
+	end
+end
+ 
+local Result = Check()
+ 
+if Result then return end
+
+local JobID
+
+local random = math.random(1, #JobIDs)
+JobID = JobIDs[random].JobID
+
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+    if State == Enum.TeleportState.Started then
+        syn.queue_on_teleport([[
+            wait(10)
+            local script = game:HttpGet("https://pastebin.com/raw/RhuBQJME")
+            loadstring(script)()
+        ]])
+    end
+end)
+ 
+Event:FireServer(JobID)
