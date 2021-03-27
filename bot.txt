@@ -61,7 +61,7 @@ SG.Parent = Player.PlayerGui
 local function Check()
 	for _,Door in pairs(workspace:GetChildren()) do
 		if Door:IsA("BasePart") and Door:FindFirstChild("Exit") then
-			if Door.CanCollide == false or Door.Transparency > .1 or (Door.Position - Collectors[tostring(Door.BrickColor) .. " Pos"]) > 5 then
+			if Door.CanCollide == false or Door.Transparency > .1 or (Door.Position - Collectors[tostring(Door.BrickColor) .. " Pos"]).Magnitude > 5 then
 				Label.Text = "Collector founded! - " .. Collectors[tostring(Door.BrickColor)]
 				Sound:Play()
  
