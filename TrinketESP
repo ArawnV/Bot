@@ -675,7 +675,7 @@ Chat_2.TextYAlignment = Enum.TextYAlignment.Bottom
 
 -- Scripts:
 
-local function UVCH_fake_script() -- Vm01.Core 
+local function FYDB_fake_script() -- Vm01.Core 
 	local script = Instance.new('LocalScript', Vm01)
 
 	local Player = game.Players.LocalPlayer
@@ -973,14 +973,24 @@ local function UVCH_fake_script() -- Vm01.Core
 					end
 				end
 			end
-			
+		end
+	end)
+	
+	local function PlayerAdded(Player)
+		if Player ~= game.Players.LocalPlayer then
 			Player.Chatted:Connect(function(Message)
 				if Player.Character:FindFirstChild("Observe", true) then
-					local Text = "\n<font color='rgb(170, 0, 255)>[" .. Player.Name .. "]:</font> " .. Message
+					local Text = "\n<font color='rgb(170, 0, 255')>[" .. Player.Name .. "]:</font> " .. Message
 					script.Parent.Chat.Text ..= Text
 				end
 			end)
 		end
-	end)
+	end
+	
+	for _,Player in pairs(game.Players:GetPlayers()) do
+		PlayerAdded(Player)
+	end
+	
+	game.Players.PlayerAdded:Connect(PlayerAdded)
 end
-coroutine.wrap(UVCH_fake_script)()
+coroutine.wrap(FYDB_fake_script)()
