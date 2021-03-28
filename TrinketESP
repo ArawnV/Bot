@@ -868,6 +868,7 @@ Chat_2.Text = ""
 Chat_2.TextColor3 = Color3.fromRGB(225, 225, 225)
 Chat_2.TextSize = 28.000
 Chat_2.TextWrapped = true
+Chat_2.RichText = truee
 Chat_2.TextXAlignment = Enum.TextXAlignment.Left
 Chat_2.TextYAlignment = Enum.TextYAlignment.Bottom
 
@@ -916,7 +917,7 @@ local function SJOCHH_fake_script() -- Vm01.Core
 		if Teleportable then
 			if Input.KeyCode == Enum.KeyCode.L then
 				HumR.CFrame *= CFrame.new(0, 0, -10)
-			elseif Input.KeyCode == Enum.KeyCode.K then
+			elseif Input.KeyCode == Enum.KeyCode.J then
 				HumR.CFrame *= CFrame.new(0, 0, -30)
 			elseif Input.UserInputType == Enum.UserInputType.MouseButton3 then
 				HumR.CFrame = Mouse.Hit + Vector3.new(0, 3.5, 0)
