@@ -1,0 +1,986 @@
+local Vm01 = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Border = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local List = Instance.new("Frame")
+local Trinkets = Instance.new("Frame")
+local Down = Instance.new("Frame")
+local Button = Instance.new("TextButton")
+local UIListLayout = Instance.new("UIListLayout")
+local Chat = Instance.new("Frame")
+local Down_2 = Instance.new("Frame")
+local Button_2 = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local Down_3 = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local Down_4 = Instance.new("Frame")
+local Frame_3 = Instance.new("Frame")
+local Down_5 = Instance.new("Frame")
+local Frame_4 = Instance.new("Frame")
+local Down_6 = Instance.new("Frame")
+local Frame_5 = Instance.new("Frame")
+local Down_7 = Instance.new("Frame")
+local TitleDown = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local Up = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local UICorner_4 = Instance.new("UICorner")
+local Down_8 = Instance.new("Frame")
+local List2 = Instance.new("Frame")
+local TrinketsMenu = Instance.new("Frame")
+local RatioMarkers = Instance.new("TextButton")
+local RatioAC = Instance.new("TextButton")
+local RatioTracers = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Decorations = Instance.new("Folder")
+local Border_2 = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local Border_Left_Top = Instance.new("Frame")
+local Down_9 = Instance.new("Frame")
+local UICorner_7 = Instance.new("UICorner")
+local Up_2 = Instance.new("Frame")
+local Left_Top = Instance.new("Frame")
+local Split = Instance.new("Frame")
+local Split_2 = Instance.new("Frame")
+local Label1 = Instance.new("TextLabel")
+local Label2 = Instance.new("TextLabel")
+local Label3 = Instance.new("TextLabel")
+local ChatMenu = Instance.new("Frame")
+local RatioChat = Instance.new("TextButton")
+local Ah = Instance.new("TextButton")
+local Ah_2 = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local Decorations_2 = Instance.new("Folder")
+local Border_3 = Instance.new("Frame")
+local UICorner_9 = Instance.new("UICorner")
+local Border_Left_Top_2 = Instance.new("Frame")
+local Down_10 = Instance.new("Frame")
+local UICorner_10 = Instance.new("UICorner")
+local Up_3 = Instance.new("Frame")
+local Left_Top_2 = Instance.new("Frame")
+local Split_3 = Instance.new("Frame")
+local Split_4 = Instance.new("Frame")
+local Label1_2 = Instance.new("TextLabel")
+local Label2_2 = Instance.new("TextLabel")
+local Label3_2 = Instance.new("TextLabel")
+local Tracers = Instance.new("Frame")
+local Marker = Instance.new("BillboardGui")
+local Frame_6 = Instance.new("Frame")
+local UICorner_11 = Instance.new("UICorner")
+local Chat_2 = Instance.new("TextLabel")
+
+--Properties:
+
+Vm01.Name = "Vm 0.1"
+Vm01.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Vm01.ResetOnSpawn = false
+
+Main.Name = "Main"
+Main.Parent = Vm01
+Main.BackgroundColor3 = Color3.fromRGB(94, 84, 142)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.124065757, 0, 0.234523803, 0)
+Main.Size = UDim2.new(0, 200, 0, 395)
+
+UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.Parent = Main
+
+Border.Name = "Border"
+Border.Parent = Main
+Border.AnchorPoint = Vector2.new(0.5, 0.5)
+Border.BackgroundColor3 = Color3.fromRGB(35, 25, 66)
+Border.BorderSizePixel = 0
+Border.Position = UDim2.new(0.5, 0, 0.5, 0)
+Border.Size = UDim2.new(1, 8, 1, 8)
+Border.ZIndex = 0
+
+UICorner_2.CornerRadius = UDim.new(0, 16)
+UICorner_2.Parent = Border
+
+List.Name = "List"
+List.Parent = Main
+List.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+List.BackgroundTransparency = 1.000
+List.BorderSizePixel = 0
+List.Position = UDim2.new(0, 0, 0, 55)
+List.Size = UDim2.new(1, 0, 1, -85)
+List.ZIndex = 0
+
+Trinkets.Name = "Trinkets"
+Trinkets.Parent = List
+Trinkets.BackgroundColor3 = Color3.fromRGB(190, 149, 196)
+Trinkets.BorderSizePixel = 0
+Trinkets.Size = UDim2.new(0, 200, 0, 40)
+Trinkets.ZIndex = 3
+
+Down.Name = "Down"
+Down.Parent = Trinkets
+Down.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down.BorderSizePixel = 0
+Down.Position = UDim2.new(0, 0, 1, -4)
+Down.Size = UDim2.new(1, 0, 0, 4)
+Down.ZIndex = 4
+
+Button.Name = "Button"
+Button.Parent = Trinkets
+Button.Active = false
+Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button.BackgroundTransparency = 1.000
+Button.BorderSizePixel = 0
+Button.Selectable = false
+Button.Size = UDim2.new(0, 200, 0, 36)
+Button.ZIndex = 4
+Button.Font = Enum.Font.GothamSemibold
+Button.Text = "Trinkets"
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.TextSize = 28.000
+Button.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Button.TextStrokeTransparency = 0.900
+
+UIListLayout.Parent = List
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 5)
+
+Chat.Name = "Chat"
+Chat.Parent = List
+Chat.BackgroundColor3 = Color3.fromRGB(190, 149, 196)
+Chat.BorderSizePixel = 0
+Chat.LayoutOrder = 3
+Chat.Size = UDim2.new(0, 200, 0, 40)
+Chat.ZIndex = 3
+
+Down_2.Name = "Down"
+Down_2.Parent = Chat
+Down_2.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_2.BorderSizePixel = 0
+Down_2.Position = UDim2.new(0, 0, 0.899999976, 0)
+Down_2.Size = UDim2.new(1, 0, 0.100000001, 0)
+Down_2.ZIndex = 4
+
+Button_2.Name = "Button"
+Button_2.Parent = Chat
+Button_2.Active = false
+Button_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button_2.BackgroundTransparency = 1.000
+Button_2.BorderSizePixel = 0
+Button_2.Selectable = false
+Button_2.Size = UDim2.new(0, 200, 0, 36)
+Button_2.ZIndex = 4
+Button_2.Font = Enum.Font.GothamSemibold
+Button_2.Text = "Illusionist"
+Button_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button_2.TextSize = 28.000
+Button_2.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Button_2.TextStrokeTransparency = 0.900
+
+Frame.Parent = List
+Frame.BackgroundColor3 = Color3.fromRGB(190, 149, 196)
+Frame.BorderSizePixel = 0
+Frame.LayoutOrder = 4
+Frame.Size = UDim2.new(0, 200, 0, 40)
+Frame.ZIndex = 3
+
+Down_3.Name = "Down"
+Down_3.Parent = Frame
+Down_3.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_3.BorderSizePixel = 0
+Down_3.Position = UDim2.new(0, 0, 0.899999976, 0)
+Down_3.Size = UDim2.new(1, 0, 0.100000001, 0)
+Down_3.ZIndex = 4
+
+Frame_2.Parent = List
+Frame_2.BackgroundColor3 = Color3.fromRGB(190, 149, 196)
+Frame_2.BorderSizePixel = 0
+Frame_2.LayoutOrder = 5
+Frame_2.Size = UDim2.new(0, 200, 0, 40)
+Frame_2.ZIndex = 3
+
+Down_4.Name = "Down"
+Down_4.Parent = Frame_2
+Down_4.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_4.BorderSizePixel = 0
+Down_4.Position = UDim2.new(0, 0, 0.899999976, 0)
+Down_4.Size = UDim2.new(1, 0, 0.100000001, 0)
+Down_4.ZIndex = 4
+
+Frame_3.Parent = List
+Frame_3.BackgroundColor3 = Color3.fromRGB(190, 149, 196)
+Frame_3.BorderSizePixel = 0
+Frame_3.LayoutOrder = 6
+Frame_3.Size = UDim2.new(0, 200, 0, 40)
+Frame_3.ZIndex = 3
+
+Down_5.Name = "Down"
+Down_5.Parent = Frame_3
+Down_5.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_5.BorderSizePixel = 0
+Down_5.Position = UDim2.new(0, 0, 0.899999976, 0)
+Down_5.Size = UDim2.new(1, 0, 0.100000001, 0)
+Down_5.ZIndex = 4
+
+Frame_4.Parent = List
+Frame_4.BackgroundColor3 = Color3.fromRGB(190, 149, 196)
+Frame_4.BorderSizePixel = 0
+Frame_4.LayoutOrder = 7
+Frame_4.Size = UDim2.new(0, 200, 0, 40)
+Frame_4.ZIndex = 3
+
+Down_6.Name = "Down"
+Down_6.Parent = Frame_4
+Down_6.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_6.BorderSizePixel = 0
+Down_6.Position = UDim2.new(0, 0, 0.899999976, 0)
+Down_6.Size = UDim2.new(1, 0, 0.100000001, 0)
+Down_6.ZIndex = 4
+
+Frame_5.Parent = List
+Frame_5.BackgroundColor3 = Color3.fromRGB(190, 149, 196)
+Frame_5.BorderSizePixel = 0
+Frame_5.LayoutOrder = 8
+Frame_5.Size = UDim2.new(0, 200, 0, 40)
+Frame_5.ZIndex = 3
+
+Down_7.Name = "Down"
+Down_7.Parent = Frame_5
+Down_7.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_7.BorderSizePixel = 0
+Down_7.Position = UDim2.new(0, 0, 0.899999976, 0)
+Down_7.Size = UDim2.new(1, 0, 0.100000001, 0)
+Down_7.ZIndex = 4
+
+TitleDown.Name = "TitleDown"
+TitleDown.Parent = Main
+TitleDown.AnchorPoint = Vector2.new(0, 1)
+TitleDown.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+TitleDown.Position = UDim2.new(0, 0, 1, 0)
+TitleDown.Size = UDim2.new(0, 200, 0, 25)
+TitleDown.ZIndex = 3
+TitleDown.Font = Enum.Font.GothamSemibold
+TitleDown.Text = "Vm 0.1"
+TitleDown.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleDown.TextSize = 18.000
+TitleDown.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+TitleDown.TextStrokeTransparency = 0.900
+TitleDown.TextWrapped = true
+
+UICorner_3.CornerRadius = UDim.new(0, 12)
+UICorner_3.Parent = TitleDown
+
+Up.Name = "Up"
+Up.Parent = TitleDown
+Up.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Up.BorderSizePixel = 0
+Up.Size = UDim2.new(1, 0, 0.5, 0)
+Up.ZIndex = 2
+
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Title.Size = UDim2.new(0, 200, 0, 50)
+Title.ZIndex = 3
+Title.Font = Enum.Font.GothamSemibold
+Title.Text = "Vm 0.1"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 36.000
+Title.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Title.TextStrokeTransparency = 0.900
+Title.TextWrapped = true
+
+UICorner_4.CornerRadius = UDim.new(0, 12)
+UICorner_4.Parent = Title
+
+Down_8.Name = "Down"
+Down_8.Parent = Title
+Down_8.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_8.BorderSizePixel = 0
+Down_8.Position = UDim2.new(0, 0, 0.5, 0)
+Down_8.Size = UDim2.new(1, 0, 0.5, 0)
+Down_8.ZIndex = 2
+
+List2.Name = "List2"
+List2.Parent = Main
+List2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+List2.BackgroundTransparency = 1.000
+List2.BorderSizePixel = 0
+List2.ClipsDescendants = true
+List2.Position = UDim2.new(1, 12, 0, 51)
+List2.Size = UDim2.new(1.25, 8, 1, -77)
+List2.ZIndex = 0
+
+TrinketsMenu.Name = "TrinketsMenu"
+TrinketsMenu.Parent = List2
+TrinketsMenu.BackgroundColor3 = Color3.fromRGB(224, 177, 203)
+TrinketsMenu.BorderSizePixel = 0
+TrinketsMenu.LayoutOrder = 1
+TrinketsMenu.Position = UDim2.new(-1, 4, 0, 4)
+TrinketsMenu.Size = UDim2.new(0, 250, 0, 130)
+TrinketsMenu.ZIndex = 3
+
+RatioMarkers.Name = "RatioMarkers"
+RatioMarkers.Parent = TrinketsMenu
+RatioMarkers.AnchorPoint = Vector2.new(1, 0)
+RatioMarkers.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+RatioMarkers.BorderColor3 = Color3.fromRGB(159, 134, 192)
+RatioMarkers.BorderSizePixel = 2
+RatioMarkers.Position = UDim2.new(1, -4, 0, 4)
+RatioMarkers.Size = UDim2.new(0, 28, 0, 28)
+RatioMarkers.ZIndex = 5
+RatioMarkers.Font = Enum.Font.SourceSans
+RatioMarkers.Text = ""
+RatioMarkers.TextColor3 = Color3.fromRGB(0, 0, 0)
+RatioMarkers.TextSize = 14.000
+
+RatioAC.Name = "RatioAC"
+RatioAC.Parent = TrinketsMenu
+RatioAC.AnchorPoint = Vector2.new(1, 0)
+RatioAC.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+RatioAC.BorderColor3 = Color3.fromRGB(159, 134, 192)
+RatioAC.BorderSizePixel = 2
+RatioAC.Position = UDim2.new(1, -4, 0, 45)
+RatioAC.Size = UDim2.new(0, 28, 0, 28)
+RatioAC.ZIndex = 5
+RatioAC.Font = Enum.Font.SourceSans
+RatioAC.Text = ""
+RatioAC.TextColor3 = Color3.fromRGB(0, 0, 0)
+RatioAC.TextSize = 14.000
+
+RatioTracers.Name = "RatioTracers"
+RatioTracers.Parent = TrinketsMenu
+RatioTracers.AnchorPoint = Vector2.new(1, 0)
+RatioTracers.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+RatioTracers.BorderColor3 = Color3.fromRGB(159, 134, 192)
+RatioTracers.BorderSizePixel = 2
+RatioTracers.Position = UDim2.new(1, -4, 0, 86)
+RatioTracers.Size = UDim2.new(0, 28, 0, 28)
+RatioTracers.ZIndex = 5
+RatioTracers.Font = Enum.Font.SourceSans
+RatioTracers.Text = ""
+RatioTracers.TextColor3 = Color3.fromRGB(0, 0, 0)
+RatioTracers.TextSize = 14.000
+
+UICorner_5.Parent = TrinketsMenu
+
+Decorations.Name = "Decorations"
+Decorations.Parent = TrinketsMenu
+
+Border_2.Name = "Border"
+Border_2.Parent = Decorations
+Border_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Border_2.BackgroundColor3 = Color3.fromRGB(35, 25, 66)
+Border_2.BorderSizePixel = 0
+Border_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Border_2.Size = UDim2.new(1, 8, 1, 8)
+Border_2.ZIndex = 0
+
+UICorner_6.CornerRadius = UDim.new(0, 12)
+UICorner_6.Parent = Border_2
+
+Border_Left_Top.Name = "Border_Left_Top"
+Border_Left_Top.Parent = Decorations
+Border_Left_Top.BackgroundColor3 = Color3.fromRGB(35, 25, 66)
+Border_Left_Top.BorderSizePixel = 0
+Border_Left_Top.Position = UDim2.new(0, -4, 0, -4)
+Border_Left_Top.Size = UDim2.new(0, 12, 0, 12)
+Border_Left_Top.ZIndex = 0
+
+Down_9.Name = "Down"
+Down_9.Parent = Decorations
+Down_9.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_9.BorderSizePixel = 0
+Down_9.Position = UDim2.new(0, 0, 1, -12)
+Down_9.Size = UDim2.new(1, 0, 0, 12)
+Down_9.ZIndex = 10
+
+UICorner_7.Parent = Down_9
+
+Up_2.Name = "Up"
+Up_2.Parent = Down_9
+Up_2.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Up_2.BorderSizePixel = 0
+Up_2.Size = UDim2.new(1, 0, 0.5, 0)
+Up_2.ZIndex = 10
+
+Left_Top.Name = "Left_Top"
+Left_Top.Parent = Decorations
+Left_Top.BackgroundColor3 = Color3.fromRGB(224, 177, 203)
+Left_Top.BorderSizePixel = 0
+Left_Top.Size = UDim2.new(0, 12, 0, 12)
+
+Split.Name = "Split"
+Split.Parent = Decorations
+Split.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Split.BorderSizePixel = 0
+Split.Position = UDim2.new(0, 0, 0, 36)
+Split.Size = UDim2.new(1, 0, 0, 5)
+Split.ZIndex = 4
+
+Split_2.Name = "Split"
+Split_2.Parent = Decorations
+Split_2.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Split_2.BorderSizePixel = 0
+Split_2.Position = UDim2.new(0, 0, 0, 77)
+Split_2.Size = UDim2.new(1, 0, 0, 5)
+Split_2.ZIndex = 4
+
+Label1.Name = "Label1"
+Label1.Parent = TrinketsMenu
+Label1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label1.BackgroundTransparency = 1.000
+Label1.BorderSizePixel = 0
+Label1.Size = UDim2.new(0, 166, 0, 36)
+Label1.ZIndex = 5
+Label1.Font = Enum.Font.GothamSemibold
+Label1.Text = " Markers"
+Label1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label1.TextSize = 32.000
+Label1.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Label1.TextStrokeTransparency = 0.900
+Label1.TextXAlignment = Enum.TextXAlignment.Left
+
+Label2.Name = "Label2"
+Label2.Parent = TrinketsMenu
+Label2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label2.BackgroundTransparency = 1.000
+Label2.BorderSizePixel = 0
+Label2.Position = UDim2.new(0, 0, 0, 40)
+Label2.Size = UDim2.new(0, 166, 0, 36)
+Label2.ZIndex = 5
+Label2.Font = Enum.Font.GothamSemibold
+Label2.Text = " Auto Collect"
+Label2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label2.TextSize = 32.000
+Label2.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Label2.TextStrokeTransparency = 0.900
+Label2.TextXAlignment = Enum.TextXAlignment.Left
+
+Label3.Name = "Label3"
+Label3.Parent = TrinketsMenu
+Label3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label3.BackgroundTransparency = 1.000
+Label3.BorderSizePixel = 0
+Label3.Position = UDim2.new(0, 0, 0, 82)
+Label3.Size = UDim2.new(0, 166, 0, 36)
+Label3.ZIndex = 5
+Label3.Font = Enum.Font.GothamSemibold
+Label3.Text = " Tracers"
+Label3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label3.TextSize = 32.000
+Label3.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Label3.TextStrokeTransparency = 0.900
+Label3.TextXAlignment = Enum.TextXAlignment.Left
+
+ChatMenu.Name = "ChatMenu"
+ChatMenu.Parent = List2
+ChatMenu.BackgroundColor3 = Color3.fromRGB(224, 177, 203)
+ChatMenu.BorderSizePixel = 0
+ChatMenu.LayoutOrder = 1
+ChatMenu.Position = UDim2.new(-1, 4, 0, 48)
+ChatMenu.Size = UDim2.new(0, 250, 0, 130)
+ChatMenu.ZIndex = 3
+
+RatioChat.Name = "RatioChat"
+RatioChat.Parent = ChatMenu
+RatioChat.AnchorPoint = Vector2.new(1, 0)
+RatioChat.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+RatioChat.BorderColor3 = Color3.fromRGB(159, 134, 192)
+RatioChat.BorderSizePixel = 2
+RatioChat.Position = UDim2.new(1, -4, 0, 4)
+RatioChat.Size = UDim2.new(0, 28, 0, 28)
+RatioChat.ZIndex = 5
+RatioChat.Font = Enum.Font.SourceSans
+RatioChat.Text = ""
+RatioChat.TextColor3 = Color3.fromRGB(0, 0, 0)
+RatioChat.TextSize = 14.000
+
+Ah.Name = "Ah"
+Ah.Parent = ChatMenu
+Ah.AnchorPoint = Vector2.new(1, 0)
+Ah.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+Ah.BorderColor3 = Color3.fromRGB(159, 134, 192)
+Ah.BorderSizePixel = 2
+Ah.Position = UDim2.new(1, -4, 0, 45)
+Ah.Size = UDim2.new(0, 28, 0, 28)
+Ah.ZIndex = 5
+Ah.Font = Enum.Font.SourceSans
+Ah.Text = ""
+Ah.TextColor3 = Color3.fromRGB(0, 0, 0)
+Ah.TextSize = 14.000
+
+Ah_2.Name = "Ah"
+Ah_2.Parent = ChatMenu
+Ah_2.AnchorPoint = Vector2.new(1, 0)
+Ah_2.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+Ah_2.BorderColor3 = Color3.fromRGB(159, 134, 192)
+Ah_2.BorderSizePixel = 2
+Ah_2.Position = UDim2.new(1, -4, 0, 86)
+Ah_2.Size = UDim2.new(0, 28, 0, 28)
+Ah_2.ZIndex = 5
+Ah_2.Font = Enum.Font.SourceSans
+Ah_2.Text = ""
+Ah_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Ah_2.TextSize = 14.000
+
+UICorner_8.Parent = ChatMenu
+
+Decorations_2.Name = "Decorations"
+Decorations_2.Parent = ChatMenu
+
+Border_3.Name = "Border"
+Border_3.Parent = Decorations_2
+Border_3.AnchorPoint = Vector2.new(0.5, 0.5)
+Border_3.BackgroundColor3 = Color3.fromRGB(35, 25, 66)
+Border_3.BorderSizePixel = 0
+Border_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+Border_3.Size = UDim2.new(1, 8, 1, 8)
+Border_3.ZIndex = 0
+
+UICorner_9.CornerRadius = UDim.new(0, 12)
+UICorner_9.Parent = Border_3
+
+Border_Left_Top_2.Name = "Border_Left_Top"
+Border_Left_Top_2.Parent = Decorations_2
+Border_Left_Top_2.BackgroundColor3 = Color3.fromRGB(35, 25, 66)
+Border_Left_Top_2.BorderSizePixel = 0
+Border_Left_Top_2.Position = UDim2.new(0, -4, 0, -4)
+Border_Left_Top_2.Size = UDim2.new(0, 12, 0, 12)
+Border_Left_Top_2.ZIndex = 0
+
+Down_10.Name = "Down"
+Down_10.Parent = Decorations_2
+Down_10.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Down_10.BorderSizePixel = 0
+Down_10.Position = UDim2.new(0, 0, 1, -12)
+Down_10.Size = UDim2.new(1, 0, 0, 12)
+Down_10.ZIndex = 10
+
+UICorner_10.Parent = Down_10
+
+Up_3.Name = "Up"
+Up_3.Parent = Down_10
+Up_3.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Up_3.BorderSizePixel = 0
+Up_3.Size = UDim2.new(1, 0, 0.5, 0)
+Up_3.ZIndex = 10
+
+Left_Top_2.Name = "Left_Top"
+Left_Top_2.Parent = Decorations_2
+Left_Top_2.BackgroundColor3 = Color3.fromRGB(224, 177, 203)
+Left_Top_2.BorderSizePixel = 0
+Left_Top_2.Size = UDim2.new(0, 12, 0, 12)
+
+Split_3.Name = "Split"
+Split_3.Parent = Decorations_2
+Split_3.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Split_3.BorderSizePixel = 0
+Split_3.Position = UDim2.new(0, 0, 0, 36)
+Split_3.Size = UDim2.new(1, 0, 0, 5)
+Split_3.ZIndex = 4
+
+Split_4.Name = "Split"
+Split_4.Parent = Decorations_2
+Split_4.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
+Split_4.BorderSizePixel = 0
+Split_4.Position = UDim2.new(0, 0, 0, 77)
+Split_4.Size = UDim2.new(1, 0, 0, 5)
+Split_4.ZIndex = 4
+
+Label1_2.Name = "Label1"
+Label1_2.Parent = ChatMenu
+Label1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label1_2.BackgroundTransparency = 1.000
+Label1_2.BorderSizePixel = 0
+Label1_2.Size = UDim2.new(0, 166, 0, 36)
+Label1_2.ZIndex = 5
+Label1_2.Font = Enum.Font.GothamSemibold
+Label1_2.Text = " Chat"
+Label1_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label1_2.TextSize = 32.000
+Label1_2.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Label1_2.TextStrokeTransparency = 0.900
+Label1_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Label2_2.Name = "Label2"
+Label2_2.Parent = ChatMenu
+Label2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label2_2.BackgroundTransparency = 1.000
+Label2_2.BorderSizePixel = 0
+Label2_2.Position = UDim2.new(0, 0, 0, 40)
+Label2_2.Size = UDim2.new(0, 166, 0, 36)
+Label2_2.ZIndex = 5
+Label2_2.Font = Enum.Font.GothamSemibold
+Label2_2.Text = ""
+Label2_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label2_2.TextSize = 32.000
+Label2_2.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Label2_2.TextStrokeTransparency = 0.900
+Label2_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Label3_2.Name = "Label3"
+Label3_2.Parent = ChatMenu
+Label3_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label3_2.BackgroundTransparency = 1.000
+Label3_2.BorderSizePixel = 0
+Label3_2.Position = UDim2.new(0, 0, 0, 82)
+Label3_2.Size = UDim2.new(0, 166, 0, 36)
+Label3_2.ZIndex = 5
+Label3_2.Font = Enum.Font.GothamSemibold
+Label3_2.Text = ""
+Label3_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Label3_2.TextSize = 32.000
+Label3_2.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
+Label3_2.TextStrokeTransparency = 0.900
+Label3_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Tracers.Name = "Tracers"
+Tracers.Parent = Vm01
+Tracers.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Tracers.BackgroundTransparency = 1.000
+Tracers.Size = UDim2.new(1, 0, 1, 0)
+
+Marker.Name = "Marker"
+Marker.Parent = Vm01
+Marker.Enabled = false
+Marker.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Marker.Active = true
+Marker.AlwaysOnTop = true
+Marker.LightInfluence = 1.000
+Marker.Size = UDim2.new(0, 30, 0, 30)
+
+Frame_6.Parent = Marker
+Frame_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_6.BorderSizePixel = 0
+Frame_6.Size = UDim2.new(1, 0, 1, 0)
+
+UICorner_11.CornerRadius = UDim.new(1, 0)
+UICorner_11.Parent = Frame_6
+
+Chat_2.Name = "Chat"
+Chat_2.Parent = Vm01
+Chat_2.AnchorPoint = Vector2.new(1, 1)
+Chat_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Chat_2.BackgroundTransparency = 0.800
+Chat_2.BorderSizePixel = 5
+Chat_2.ClipsDescendants = true
+Chat_2.Position = UDim2.new(1, -10, 1, -10)
+Chat_2.Size = UDim2.new(0, 400, 0, 300)
+Chat_2.Visible = false
+Chat_2.Font = Enum.Font.GothamSemibold
+Chat_2.Text = ""
+Chat_2.TextColor3 = Color3.fromRGB(225, 225, 225)
+Chat_2.TextSize = 28.000
+Chat_2.TextWrapped = true
+Chat_2.TextXAlignment = Enum.TextXAlignment.Left
+Chat_2.TextYAlignment = Enum.TextYAlignment.Bottom
+
+-- Scripts:
+
+local function UVCH_fake_script() -- Vm01.Core 
+	local script = Instance.new('LocalScript', Vm01)
+
+	local Player = game.Players.LocalPlayer
+	local Mouse = Player:GetMouse()
+	
+	local Character = Player.Character or Player.CharacterAdded:Wait()
+	local HumR = Character:WaitForChild("HumanoidRootPart")
+	local Hum = Character:WaitForChild("Humanoid")
+	
+	local UIS = game:GetService("UserInputService")
+	local RS = game:GetService("RunService")
+	local TS = game:GetService("TweenService")
+	
+	local function Tween(Obj, TInfo, Goal)
+		local Tw = TS:Create(Obj, TInfo, Goal)
+		Tw:Play()
+	
+		return Tw
+	end
+	
+	local Main = script.Parent:WaitForChild("Main")
+	
+	Main.Active = true
+	Main.Draggable = true
+	
+	local List = Main:WaitForChild("List")
+	local List2 = Main:WaitForChild("List2")
+	
+	local Teleportable = false
+	
+	UIS.InputBegan:Connect(function(Input, isTyping)
+		if isTyping then return end
+	
+		if Input.KeyCode == Enum.KeyCode.F3 then
+			Main.Visible = not Main.Visible
+		elseif Input.KeyCode == Enum.KeyCode.T then
+			Teleportable = not Teleportable
+		elseif Input.UserInputType == Enum.UserInputType.MouseButton3 then
+			if Teleportable then
+				HumR.CFrame = Mouse.Hit + Vector3.new(0, 3.5, 0)
+			end
+		elseif Input.KeyCode == Enum.KeyCode.L then
+			if Teleportable then
+				HumR.CFrame *= CFrame.new(0, 0, -10)
+			end
+		elseif Input.KeyCode == Enum.KeyCode.K then
+			if Teleportable then
+				HumR.CFrame *= CFrame.new(0, 0, -30)
+			end
+		end
+	end)
+	
+	local function ToggleMenu(Menu)
+		if List2:FindFirstChild(Menu) then
+			Menu = List2:FindFirstChild(Menu)
+	
+			local TInfo = TweenInfo.new(.1, Enum.EasingStyle.Sine, Enum.EasingDirection.In)
+			local TInfo2 = TweenInfo.new(.1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	
+			if Menu.Position.X.Scale == -1 then
+				for _,oMenu in pairs(List2:GetChildren()) do
+					if oMenu ~= Menu then
+						if oMenu.Position.X.Scale == 0 then
+							local Goal = {Position = oMenu.Position - UDim2.new(1, 0, 0, 0)}
+	
+							local Tw = Tween(oMenu, TInfo2, Goal)
+						end
+					end
+				end
+				
+				local Goal = {Position = Menu.Position + UDim2.new(1, 0, 0, 0)}
+	
+				local Tw = Tween(Menu, TInfo, Goal)
+				return Tw
+			else
+				local Goal = {Position = Menu.Position - UDim2.new(1, 0, 0, 0)}
+	
+				local Tw = Tween(Menu, TInfo2, Goal)
+				return Tw
+			end
+		end
+	end
+	
+	local DB = false
+	for _,Button in pairs(List:GetChildren()) do
+		if Button:FindFirstChild("Button") then
+			Button.Button.MouseButton1Click:Connect(function()
+				if DB then return end
+				DB = true
+	
+				local Tw = ToggleMenu(Button.Name .. "Menu")
+	
+				Tw.Completed:Wait()
+				DB = false
+			end)
+		end
+	end
+	
+	for _,Button in pairs(List2:GetDescendants()) do
+		if Button:IsA("GuiButton") then
+			if string.sub(Button.Name, 1, 5) == "Ratio" then
+				Button.MouseButton1Click:Connect(function()
+					if Button.BackgroundColor3 == Color3.fromRGB(255, 80, 80) then
+						Button.BackgroundColor3 = Color3.fromRGB(80, 255, 80)
+					else
+						Button.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+					end
+				end)
+			end
+		end
+	end
+	
+	local F
+	
+	local Trinkets = {}
+	for _,Trinket in pairs(workspace:GetChildren()) do
+		if Trinket:IsA("BasePart") and Trinket:FindFirstChildWhichIsA("ClickDetector", true) then
+			local Frame = Instance.new("Frame")
+			Frame.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+			Frame.BorderSizePixel = 0
+			Frame.ZIndex = -10
+			Frame.AnchorPoint = Vector2.new(0, 0)
+			Frame.Parent = script.Parent.Tracers
+			Trinkets[Trinket] = Frame
+		else
+			if Trinket:IsA("Folder") and Trinket.Name == "Folder" and Trinket:FindFirstChildWhichIsA("ClickDetector", true) then
+				F = Trinket
+			end
+		end
+	end
+	
+	workspace.ChildAdded:Connect(function(Trinket)
+		if Trinket:IsA("BasePart") and Trinket:FindFirstChildWhichIsA("ClickDetector", true) then
+			local Frame = Instance.new("Frame")
+			Frame.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+			Frame.BorderSizePixel = 0
+			Frame.ZIndex = -10
+			Frame.AnchorPoint = Vector2.new(0, 0)
+			Frame.Parent = script.Parent.Tracers
+			Trinkets[Trinket] = Frame
+		end
+	end)
+	
+	workspace.ChildRemoved:Connect(function(Trinket)
+		if Trinkets[Trinket] then
+			Trinkets[Trinket]:Destroy()
+		end
+	end)
+	
+	local function ClampToBorder(Position)
+		local ScreenSize = workspace.CurrentCamera.ViewportSize
+		local X = ScreenSize.X - Position.X
+		local Y = ScreenSize.Y - Position.Y
+	
+		local DistanceToBorderX = math.min(X, ScreenSize.X - X)
+		local DistanceToBorderY = math.min(Y, ScreenSize.Y - Y)
+	
+		if DistanceToBorderY < DistanceToBorderX then
+			if Y < (ScreenSize.Y - Y) then
+				return Vector3.new(math.clamp(X, 0, ScreenSize.X), 0, 0)
+			else
+				return Vector3.new(math.clamp(X, 0, ScreenSize.X), ScreenSize.Y, 0)
+			end
+		else
+			if X < (ScreenSize.X - X) then
+				return Vector3.new(0, math.clamp(Y, 0, ScreenSize.Y))
+			else
+				return Vector3.new(ScreenSize.X, math.clamp(Y, 0, ScreenSize.Y), 0)
+			end
+		end
+	end
+	
+	local function Tracer(Frame, P1, P2)
+		local V = (P2 - P1)
+	
+		local Angle = math.deg(math.atan2(V.Y, V.X))
+	
+		local lX = math.abs(P2.X - P1.X)
+		local lY = math.abs(P2.Y - P1.Y)
+	
+		local h = math.sqrt(lX ^ 2 + lY ^ 2)
+	
+		Frame.Visible = true
+		Frame.Size = UDim2.new(0, h, 0, 2)
+		Frame.Rotation = Angle
+		Frame.Position = UDim2.new(0, P1.X + V.X/2 - Frame.Size.X.Offset/2, 0, P1.Y + V.Y/2 - Frame.Size.Y.Offset/2)
+	end
+	
+	RS.RenderStepped:Connect(function()
+		if HumR then
+			for Trinket,_ in pairs(Trinkets) do
+				if not Trinket:FindFirstChild("Marker") then
+					local Marker = script.Parent.Marker:Clone()
+					Marker.Frame.BackgroundColor3 = Trinket.Color
+					Marker.Parent = Trinket
+				end
+	
+				local Dist = (HumR.Position - Trinket.Position).Magnitude
+	
+				if script.Parent:FindFirstChild("RatioMarkers", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
+					Trinket:FindFirstChild("Marker").Enabled = true
+	
+					if Dist > 750 then
+						Trinket:FindFirstChild("Marker").Enabled = false
+					end
+				else
+					Trinket:FindFirstChild("Marker").Enabled = false
+				end
+	
+				if script.Parent:FindFirstChild("RatioAC", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
+					if Trinket and Trinket:FindFirstChildWhichIsA("ClickDetector", true) then
+						local CD = Trinket:FindFirstChildWhichIsA("ClickDetector", true)
+	
+						if (HumR.Position - Trinket.Position).Magnitude <= CD.MaxActivationDistance then
+							fireclickdetector(Trinket:FindFirstChildWhichIsA("ClickDetector", true))
+						end
+					end
+				end
+	
+				if script.Parent:FindFirstChild("RatioTracers", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
+					if Dist <= 750 then
+						local P1, V1 = workspace.CurrentCamera:WorldToScreenPoint(HumR.Position)
+						local P2, V2 = workspace.CurrentCamera:WorldToScreenPoint(Trinket.Position)
+	
+						if P1.Z < 0 then P1 = ClampToBorder(P1) end
+						if P2.Z < 0 then P2 = ClampToBorder(P2) end
+	
+						Tracer(Trinkets[Trinket], P1, P2)
+					else
+						Trinkets[Trinket].Visible = false
+					end
+				else
+					Trinkets[Trinket].Visible = false
+				end
+			end
+	
+			if script.Parent:FindFirstChild("RatioAC", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
+				for _,Obj in pairs(F:GetChildren()) do
+					if Obj and Obj:IsA("BasePart") and Obj:FindFirstChildWhichIsA("ClickDetector", true) then
+						local CD = Obj:FindFirstChildWhichIsA("ClickDetector", true)
+	
+						if (HumR.Position - Obj.Position).Magnitude <= CD.MaxActivationDistance then
+							fireclickdetector(Obj:FindFirstChildWhichIsA("ClickDetector", true))
+						end
+					end
+				end
+			end
+		else
+			HumR = nil
+			if Player.Character then
+				if Player.Character:FindFirstChild("HumanoidRootPart") then
+					Character = Player.Character
+					HumR = Character:FindFirstChild("HumanoidRootPart")
+					Hum = Character:FindFirstChild("Humanoid")
+				end
+			end
+		end
+		
+		if script.Parent:FindFirstChild("RatioChat", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
+			script.Parent.Chat.Visible = true
+		else
+			script.Parent.Chat.Visible = false
+		end
+		
+		for _,Player in pairs(game.Players:GetPlayers()) do
+			local PlayerName = ""
+	
+			local LS = Player:WaitForChild("leaderstats")
+			local HR = LS:FindFirstChild("HouseRank")
+			local FN = LS:WaitForChild("FirstName")
+			local LN = LS:WaitForChild("LastName")
+	
+			if HR and HR.Value == "Owner" then PlayerName ..= "Lord " end
+	
+			if LN.Value == "" then
+				PlayerName ..= FN.Value
+			else
+				PlayerName ..= FN.Value .. " " .. LN.Value
+			end
+	
+			local LG = script.Parent.Parent:WaitForChild("LeaderboardGui")
+			local MF = LG:WaitForChild("MainFrame")
+			local SF = MF:WaitForChild("ScrollingFrame")
+	
+			local ObserveFounded = Player:FindFirstChild("Observe", true) or Player.Character:FindFirstChild("Observe", true)
+	
+			if ObserveFounded then
+				for _,Label in pairs(SF:GetChildren()) do
+					if Label:IsA("TextLabel") and Label.Text == PlayerName then
+						if Player:FindFirstChild("Observe", true) then
+							Label.TextColor3 = Color3.fromRGB(170, 0, 127)
+						else
+							Label.TextColor3 = Color3.fromRGB(255, 0, 0)
+						end
+					end
+				end
+			end
+			
+			Player.Chatted:Connect(function(Message)
+				if Player.Character:FindFirstChild("Observe", true) then
+					local Text = "\n<font color='rgb(170, 0, 255)>[" .. Player.Name .. "]:</font> " .. Message
+					script.Parent.Chat.Text ..= Text
+				end
+			end)
+		end
+	end)
+end
+coroutine.wrap(UVCH_fake_script)()
