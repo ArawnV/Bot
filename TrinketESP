@@ -866,15 +866,15 @@ Chat_2.Visible = false
 Chat_2.Font = Enum.Font.GothamSemibold
 Chat_2.Text = ""
 Chat_2.TextColor3 = Color3.fromRGB(225, 225, 225)
-Chat_2.TextSize = 28.000
+Chat_2.TextSize = 24.000
 Chat_2.TextWrapped = true
-Chat_2.RichText = truee
+Chat_2.RichText = true
 Chat_2.TextXAlignment = Enum.TextXAlignment.Left
 Chat_2.TextYAlignment = Enum.TextYAlignment.Bottom
 
 -- Scripts:
 
-local function SJOCHH_fake_script() -- Vm01.Core 
+local function LHADCR_fake_script() -- Vm01.Core 
 	local script = Instance.new('LocalScript', Vm01)
 
 	local Player = game.Players.LocalPlayer
@@ -1120,15 +1120,6 @@ local function SJOCHH_fake_script() -- Vm01.Core
 					end
 				end
 			end
-		else
-			HumR = nil
-			if Player.Character then
-				if Player.Character:FindFirstChild("HumanoidRootPart") then
-					Character = Player.Character
-					HumR = Character:FindFirstChild("HumanoidRootPart")
-					Hum = Character:FindFirstChild("Humanoid")
-				end
-			end
 		end
 		
 		if script.Parent:FindFirstChild("RatioChat", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
@@ -1186,9 +1177,15 @@ local function SJOCHH_fake_script() -- Vm01.Core
 		if Player ~= game.Players.LocalPlayer then
 			Player.Chatted:Connect(function(Message)
 				if Player.Character:FindFirstChild("Observe", true) then
-					local Text = "\n<font color='rgb(170, 0, 255')>[" .. Player.Name .. "]:</font> " .. Message
+					local Text = "\n<font color='rgb(170, 0, 255)'>[" .. Player.Name .. "]:</font> " .. Message
 					script.Parent.Chat.Text ..= Text
 				end
+			end)
+		else
+			Player.CharacterAdded:Connect(function(Chr)
+				Character = Chr
+				HumR = Character:WaitForChild("HumanoidRootPart")
+				Hum = Character:WaitForChild("Humanoid")
 			end)
 		end
 	end
@@ -1199,4 +1196,4 @@ local function SJOCHH_fake_script() -- Vm01.Core
 	
 	game.Players.PlayerAdded:Connect(PlayerAdded)
 end
-coroutine.wrap(SJOCHH_fake_script)()
+coroutine.wrap(LHADCR_fake_script)()
