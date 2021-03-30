@@ -52,9 +52,9 @@ local isBotStarted = false
 
 _G.StartBot = function(Place)
 	isBotStarted = Place
-	
+
 	local Positions = Positions[Place .. "Positions"]
-	
+
 	game:GetService("RunService").RenderStepped:Connect(function()
 		for _,Trinket in pairs(workspace:GetChildren()) do
 			if Trinket:IsA("BasePart") and Trinket:FindFirstChildWhichIsA("ClickDetector", true) then
@@ -63,7 +63,7 @@ _G.StartBot = function(Place)
 			end
 		end
 	end)
-	
+
 	local Distance = (HumR.Position - Positions[1]).Magnitude
 
 	if Distance > 25 then
@@ -81,30 +81,13 @@ _G.StartBot = function(Place)
 	end
 
 	TravelTo(Positions[1])
-	
+
 	game.Players.LocalPlayer:Kick("Server loot is successful!")
 	wait(1)
 	game:GetService("TeleportService"):Teleport(3016661674, game.Players.LocalPlayer)
 end
 
-local function ServerChanged()
-	print("a")
-	
-	
-	print("b")
-	
-	
-	
-	
-	
-	
-        
-	
-	
-        
-	
-end
-
 syn.queue_on_teleport([[
-	syn.queue_on_teleport('repeat wait() until game:IsLoaded() wait(3) game.Players.LocalPlayer.PlayerGui.StartMenu.Finish:FireServer() wait(2) local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot") loadstring(Script)() wait(2) _G.StartBot("Sunken")')
+	local isBotStarted = isBotStarted
+	syn.queue_on_teleport('repeat wait() until game:IsLoaded() wait(4) game.Players.LocalPlayer.PlayerGui.StartMenu.Finish:FireServer() wait(1) local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/Vm-GUI") loadstring(Script)() local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot") loadstring(Script)() wait(1) _G.StartBot(isBotStarted)')
 ]])
