@@ -83,7 +83,7 @@ _G.StartBot = function(Place)
 	TravelTo(Positions[1])
 	
 	game.Players.LocalPlayer:Kick("Server loot is successful!")
-	wait(.1)
+	wait(1)
 	game:GetService("TeleportService"):Teleport(3016661674, game.Players.LocalPlayer)
 end
 
