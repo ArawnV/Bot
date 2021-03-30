@@ -106,5 +106,5 @@ local function ServerChanged()
 end
 
 syn.queue_on_teleport([[
-	syn.queue_on_teleport('test()')
+	syn.queue_on_teleport('ServerChanged()')
 ]])
