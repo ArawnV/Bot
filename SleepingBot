@@ -1,4 +1,4 @@
---if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then return end
+if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then return end
 
 local Positions = {
 	["SunkenPositions"] = {
@@ -48,10 +48,8 @@ local function TravelTo(Position)
 	Con2:Disconnect()
 end
 
-local isBotStarted = false
-
 _G.StartBot = function(Place)
-	isBotStarted = Place
+	writefile("Looting.txt", Place)
 
 	local Positions = Positions[Place .. "Positions"]
 
@@ -89,5 +87,5 @@ end
 
 syn.queue_on_teleport([[
 	local isBotStarted = isBotStarted
-	syn.queue_on_teleport('repeat wait() until game:IsLoaded() wait(4) game.Players.LocalPlayer.PlayerGui.StartMenu.Finish:FireServer() wait(1) local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/Vm-GUI") loadstring(Script)() local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot") loadstring(Script)() wait(1) _G.StartBot(isBotStarted)')
+	syn.queue_on_teleport('repeat wait() until game:IsLoaded() wait(4) game.Players.LocalPlayer.PlayerGui.StartMenu.Finish:FireServer() wait(1) local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/Vm-GUI") loadstring(Script)() local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot") loadstring(Script)() wait(1) _G.StartBot(readfile("Looting.txt"))')
 ]])
