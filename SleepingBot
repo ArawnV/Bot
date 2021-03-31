@@ -1,4 +1,3 @@
-wait(2)
 print("hi")
 if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then return end
 print("a")
