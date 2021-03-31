@@ -353,7 +353,7 @@ Title.BackgroundColor3 = Color3.fromRGB(159, 134, 192)
 Title.Size = UDim2.new(0, 200, 0, 50)
 Title.ZIndex = 3
 Title.Font = Enum.Font.GothamSemibold
-Title.Text = "Vm 0.1"
+Title.Text = "Vm 0.8"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextSize = 36.000
 Title.TextStrokeColor3 = Color3.fromRGB(224, 177, 203)
@@ -1037,7 +1037,7 @@ Chat_2.TextYAlignment = Enum.TextYAlignment.Bottom
 
 -- Scripts:
 
-local function NSRDX_fake_script() -- Vm01.Core 
+local function KSLBZHA_fake_script() -- Vm01.Core 
 	local script = Instance.new('LocalScript', Vm01)
 
 	local Player = game.Players.LocalPlayer
@@ -1076,7 +1076,7 @@ local function NSRDX_fake_script() -- Vm01.Core
 		elseif Input.KeyCode == Enum.KeyCode.T then
 			Teleportable = not Teleportable
 		end
-		
+	
 		if Teleportable then
 			if Input.KeyCode == Enum.KeyCode.L then
 				HumR.CFrame *= CFrame.new(0, 0, -10)
@@ -1105,7 +1105,7 @@ local function NSRDX_fake_script() -- Vm01.Core
 						end
 					end
 				end
-				
+	
 				local Goal = {Position = Menu.Position + UDim2.new(1, 0, 0, 0)}
 	
 				local Tw = Tween(Menu, TInfo, Goal)
@@ -1284,22 +1284,22 @@ local function NSRDX_fake_script() -- Vm01.Core
 				end
 			end
 		end
-		
+	
 		if script.Parent:FindFirstChild("RatioChat", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 			script.Parent.Chat.Visible = true
 		else
 			script.Parent.Chat.Visible = false
 		end
-		
+	
 		if script.Parent:FindFirstChild("RatioBright", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 			game.Lighting.Ambient = Color3.fromRGB(138, 138, 138)
 			game.Lighting.Brightness = 2
 		end
-		
+	
 		if script.Parent:FindFirstChild("RatioUnfog", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 			game.Lighting.FogEnd = 1000000
 		end
-		
+	
 		for _,Player in pairs(game.Players:GetPlayers()) do
 			local PlayerName = ""
 	
@@ -1366,10 +1366,7 @@ local function NSRDX_fake_script() -- Vm01.Core
 		_G.StartBot(script.Parent:FindFirstChild("LabelLoot", true).Text)
 	end)
 	
-	
-end
-coroutine.wrap(NSRDX_fake_script)()
-_G.EnableEverything = function()
+	_G.EnableEverything = function()
 		for _,Button in pairs(List2:GetDescendants()) do
 			if Button:IsA("GuiButton") then
 				if string.sub(Button.Name, 1, 5) == "Ratio" then
@@ -1378,5 +1375,8 @@ _G.EnableEverything = function()
 			end
 		end
 	end
+end
+coroutine.wrap(KSLBZHA_fake_script)()
+
 local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
 loadstring(Script)()
