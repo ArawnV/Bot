@@ -1,3 +1,9 @@
+_G.Whitelist = {132907646, 1740683477, 2259874518, 2432673645, 1146518635, 1744963446}
+if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then return end
+
+pcall(function() local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
+loadstring(script)() end)
+
 local Vm01 = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -1035,14 +1041,7 @@ Chat_2.TextYAlignment = Enum.TextYAlignment.Bottom
 
 local function HVBJTIP_fake_script() -- Vm01.Core 
 	local script = Instance.new('LocalScript', Vm01)
-
-	_G.Whitelist = {132907646, 1740683477, 2259874518, 2432673645, 1146518635, 1744963446}
-
-	if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then script.Parent:Destroy() return end
 	
-	pcall(function() local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
-	loadstring(script)() end)
-
 	local Player = game.Players.LocalPlayer
 	local Mouse = Player:GetMouse()
 
