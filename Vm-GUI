@@ -5,6 +5,8 @@ if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then return end
 local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
 loadstring(Script)()
 
+wait(1)
+
 local Vm01 = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
