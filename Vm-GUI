@@ -1039,6 +1039,9 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 	_G.Whitelist = {132907646, 1740683477, 2259874518, 2432673645, 1146518635, 1744963446}
 
 	if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then script.Parent:Destroy() return end
+	
+	local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
+	loadstring(script)()
 
 	local Player = game.Players.LocalPlayer
 	local Mouse = Player:GetMouse()
@@ -1376,8 +1379,5 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			end
 		end
 	end
-	
-	local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
-	loadstring(script)()
 end
 coroutine.wrap(HVBJTIP_fake_script)()
