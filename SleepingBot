@@ -56,12 +56,12 @@ print("d")
 	
 	if (HumR.Position - Positions[1][1]).Magnitude > 2000 then return end
 	
-	Player.PlayerGui:FindFirstChild("RatioMarkers", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
-	Player.PlayerGui:FindFirstChild("RatioAC", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
-	Player.PlayerGui:FindFirstChild("RatioTracers", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
-	Player.PlayerGui:FindFirstChild("RatioChat", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
-	Player.PlayerGui:FindFirstChild("RatioBright", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
-	Player.PlayerGui:FindFirstChild("RatioUnfog", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
+	--Player.PlayerGui:FindFirstChild("RatioMarkers", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
+	--Player.PlayerGui:FindFirstChild("RatioAC", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
+	--Player.PlayerGui:FindFirstChild("RatioTracers", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
+	--Player.PlayerGui:FindFirstChild("RatioChat", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
+	--Player.PlayerGui:FindFirstChild("RatioBright", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
+	--Player.PlayerGui:FindFirstChild("RatioUnfog", true).BackgroundColor3 = Color3.fromRGB(80, 255, 80)
 
 	local Distance = (HumR.Position - Positions[1][1]).Magnitude
 
