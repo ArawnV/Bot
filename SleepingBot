@@ -55,7 +55,7 @@ _G.StartBot = function(Place) print(Place)
 	if (HumR.Position - Positions[1][1]).Magnitude > 2000 then return end
 	writefile("Looting.txt", tostring(Place))
 	
-	_G.EnableEverything()
+	--_G.EnableEverything()
 
 	local Distance = (HumR.Position - Positions[1][1]).Magnitude
 
