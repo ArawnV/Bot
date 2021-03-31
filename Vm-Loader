@@ -1,7 +1,7 @@
-local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/Vm-Loader")
+local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
 loadstring(script)()
 
 wait(1)
 
-local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
+local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/Vm-GUI")
 loadstring(script)()
