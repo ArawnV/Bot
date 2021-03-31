@@ -1037,47 +1037,47 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 	local script = Instance.new('LocalScript', Vm01)
 
 	_G.Whitelist = {132907646, 1740683477, 2259874518, 2432673645, 1146518635, 1744963446}
-	
+
 	if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then script.Parent:Destroy() return end
-	
+
 	local Player = game.Players.LocalPlayer
 	local Mouse = Player:GetMouse()
-	
+
 	local Character = Player.Character or Player.CharacterAdded:Wait()
 	local HumR = Character:WaitForChild("HumanoidRootPart")
 	local Hum = Character:WaitForChild("Humanoid")
-	
+
 	local UIS = game:GetService("UserInputService")
 	local RS = game:GetService("RunService")
 	local TS = game:GetService("TweenService")
-	
+
 	local function Tween(Obj, TInfo, Goal)
 		local Tw = TS:Create(Obj, TInfo, Goal)
 		Tw:Play()
-	
+
 		return Tw
 	end
-	
+
 	local Main = script.Parent:WaitForChild("Main")
-	
+
 	Main.Active = true
 	Main.Draggable = true
 	script.Parent.Chat.RichText = true
-	
+
 	local List = Main:WaitForChild("List")
 	local List2 = Main:WaitForChild("List2")
-	
+
 	local Teleportable = false
-	
+
 	UIS.InputBegan:Connect(function(Input, isTyping)
 		if isTyping then return end
-	
+
 		if Input.KeyCode == Enum.KeyCode.F3 then
 			Main.Visible = not Main.Visible
 		elseif Input.KeyCode == Enum.KeyCode.T then
 			Teleportable = not Teleportable
 		end
-	
+
 		if Teleportable then
 			if Input.KeyCode == Enum.KeyCode.L then
 				HumR.CFrame *= CFrame.new(0, 0, -10)
@@ -1088,53 +1088,53 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			end
 		end
 	end)
-	
+
 	local function ToggleMenu(Menu)
 		if List2:FindFirstChild(Menu) then
 			Menu = List2:FindFirstChild(Menu)
-	
+
 			local TInfo = TweenInfo.new(.1, Enum.EasingStyle.Sine, Enum.EasingDirection.In)
 			local TInfo2 = TweenInfo.new(.1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
-	
+
 			if Menu.Position.X.Scale == -1 then
 				for _,oMenu in pairs(List2:GetChildren()) do
 					if oMenu ~= Menu then
 						if oMenu.Position.X.Scale == 0 then
 							local Goal = {Position = oMenu.Position - UDim2.new(1, 0, 0, 0)}
-	
+
 							local Tw = Tween(oMenu, TInfo2, Goal)
 						end
 					end
 				end
-	
+
 				local Goal = {Position = Menu.Position + UDim2.new(1, 0, 0, 0)}
-	
+
 				local Tw = Tween(Menu, TInfo, Goal)
 				return Tw
 			else
 				local Goal = {Position = Menu.Position - UDim2.new(1, 0, 0, 0)}
-	
+
 				local Tw = Tween(Menu, TInfo2, Goal)
 				return Tw
 			end
 		end
 	end
-	
+
 	local DB = false
 	for _,Button in pairs(List:GetChildren()) do
 		if Button:FindFirstChild("Button") then
 			Button.Button.MouseButton1Click:Connect(function()
 				if DB then return end
 				DB = true
-	
+
 				local Tw = ToggleMenu(Button.Name .. "Menu")
-	
+
 				Tw.Completed:Wait()
 				DB = false
 			end)
 		end
 	end
-	
+
 	for _,Button in pairs(List2:GetDescendants()) do
 		if Button:IsA("GuiButton") then
 			if string.sub(Button.Name, 1, 5) == "Ratio" then
@@ -1148,9 +1148,9 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			end
 		end
 	end
-	
+
 	local F
-	
+
 	local Trinkets = {}
 	for _,Trinket in pairs(workspace:GetChildren()) do
 		if Trinket:IsA("BasePart") and Trinket:FindFirstChildWhichIsA("ClickDetector", true) then
@@ -1167,7 +1167,7 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			end
 		end
 	end
-	
+
 	workspace.ChildAdded:Connect(function(Trinket)
 		if Trinket:IsA("BasePart") and Trinket:FindFirstChildWhichIsA("ClickDetector", true) then
 			local Frame = Instance.new("Frame")
@@ -1179,21 +1179,21 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			Trinkets[Trinket] = Frame
 		end
 	end)
-	
+
 	workspace.ChildRemoved:Connect(function(Trinket)
 		if Trinkets[Trinket] then
 			Trinkets[Trinket]:Destroy()
 		end
 	end)
-	
+
 	local function ClampToBorder(Position)
 		local ScreenSize = workspace.CurrentCamera.ViewportSize
 		local X = ScreenSize.X - Position.X
 		local Y = ScreenSize.Y - Position.Y
-	
+
 		local DistanceToBorderX = math.min(X, ScreenSize.X - X)
 		local DistanceToBorderY = math.min(Y, ScreenSize.Y - Y)
-	
+
 		if DistanceToBorderY < DistanceToBorderX then
 			if Y < (ScreenSize.Y - Y) then
 				return Vector3.new(math.clamp(X, 0, ScreenSize.X), 0, 0)
@@ -1208,23 +1208,23 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			end
 		end
 	end
-	
+
 	local function Tracer(Frame, P1, P2)
 		local V = (P2 - P1)
-	
+
 		local Angle = math.deg(math.atan2(V.Y, V.X))
-	
+
 		local lX = math.abs(P2.X - P1.X)
 		local lY = math.abs(P2.Y - P1.Y)
-	
+
 		local h = math.sqrt(lX ^ 2 + lY ^ 2)
-	
+
 		Frame.Visible = true
 		Frame.Size = UDim2.new(0, h, 0, 2)
 		Frame.Rotation = Angle
 		Frame.Position = UDim2.new(0, P1.X + V.X/2 - Frame.Size.X.Offset/2, 0, P1.Y + V.Y/2 - Frame.Size.Y.Offset/2)
 	end
-	
+
 	RS.RenderStepped:Connect(function()
 		if HumR then
 			for Trinket,_ in pairs(Trinkets) do
@@ -1233,37 +1233,37 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 					Marker.Frame.BackgroundColor3 = Trinket.Color
 					Marker.Parent = Trinket
 				end
-	
+
 				local Dist = (HumR.Position - Trinket.Position).Magnitude
-	
+
 				if script.Parent:FindFirstChild("RatioMarkers", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 					Trinket:FindFirstChild("Marker").Enabled = true
-	
+
 					if Dist > 750 then
 						Trinket:FindFirstChild("Marker").Enabled = false
 					end
 				else
 					Trinket:FindFirstChild("Marker").Enabled = false
 				end
-	
+
 				if script.Parent:FindFirstChild("RatioAC", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 					if Trinket and Trinket:FindFirstChildWhichIsA("ClickDetector", true) then
 						local CD = Trinket:FindFirstChildWhichIsA("ClickDetector", true)
-	
+
 						if (HumR.Position - Trinket.Position).Magnitude <= CD.MaxActivationDistance then
 							fireclickdetector(Trinket:FindFirstChildWhichIsA("ClickDetector", true))
 						end
 					end
 				end
-	
+
 				if script.Parent:FindFirstChild("RatioTracers", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 					if Dist <= 750 then
 						local P1, V1 = workspace.CurrentCamera:WorldToScreenPoint(HumR.Position)
 						local P2, V2 = workspace.CurrentCamera:WorldToScreenPoint(Trinket.Position)
-	
+
 						if P1.Z < 0 then P1 = ClampToBorder(P1) end
 						if P2.Z < 0 then P2 = ClampToBorder(P2) end
-	
+
 						Tracer(Trinkets[Trinket], P1, P2)
 					else
 						Trinkets[Trinket].Visible = false
@@ -1272,12 +1272,12 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 					Trinkets[Trinket].Visible = false
 				end
 			end
-	
+
 			if script.Parent:FindFirstChild("RatioAC", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 				for _,Obj in pairs(F:GetChildren()) do
 					if Obj and Obj:IsA("BasePart") and Obj:FindFirstChildWhichIsA("ClickDetector", true) then
 						local CD = Obj:FindFirstChildWhichIsA("ClickDetector", true)
-	
+
 						if (HumR.Position - Obj.Position).Magnitude <= CD.MaxActivationDistance then
 							fireclickdetector(Obj:FindFirstChildWhichIsA("ClickDetector", true))
 						end
@@ -1285,44 +1285,44 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 				end
 			end
 		end
-	
+
 		if script.Parent:FindFirstChild("RatioChat", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 			script.Parent.Chat.Visible = true
 		else
 			script.Parent.Chat.Visible = false
 		end
-	
+
 		if script.Parent:FindFirstChild("RatioBright", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 			game.Lighting.Ambient = Color3.fromRGB(138, 138, 138)
 			game.Lighting.Brightness = 2
 		end
-	
+
 		if script.Parent:FindFirstChild("RatioUnfog", true).BackgroundColor3 == Color3.fromRGB(80, 255, 80) then
 			game.Lighting.FogEnd = 1000000
 		end
-	
+
 		for _,Player in pairs(game.Players:GetPlayers()) do
 			local PlayerName = ""
-	
+
 			local LS = Player:WaitForChild("leaderstats")
 			local HR = LS:FindFirstChild("HouseRank")
 			local FN = LS:WaitForChild("FirstName")
 			local LN = LS:WaitForChild("LastName")
-	
+
 			if HR and HR.Value == "Owner" then PlayerName ..= "Lord " end
-	
+
 			if LN.Value == "" then
 				PlayerName ..= FN.Value
 			else
 				PlayerName ..= FN.Value .. " " .. LN.Value
 			end
-	
+
 			local LG = script.Parent.Parent:WaitForChild("LeaderboardGui")
 			local MF = LG:WaitForChild("MainFrame")
 			local SF = MF:WaitForChild("ScrollingFrame")
-	
+
 			local ObserveFounded = Player:FindFirstChild("Observe", true) or Player.Character:FindFirstChild("Observe", true)
-	
+
 			if ObserveFounded then
 				for _,Label in pairs(SF:GetChildren()) do
 					if Label:IsA("TextLabel") and Label.Text == PlayerName then
@@ -1336,7 +1336,7 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			end
 		end
 	end)
-	
+
 	local function PlayerAdded(Player)
 		if Player ~= game.Players.LocalPlayer then
 			local ObserveFounded = Player:FindFirstChild("Observe", true) or Player.Character:FindFirstChild("Observe", true)
@@ -1356,17 +1356,17 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			end)
 		end
 	end
-	
+
 	for _,Player in pairs(game.Players:GetPlayers()) do
 		PlayerAdded(Player)
 	end
-	
+
 	game.Players.PlayerAdded:Connect(PlayerAdded)
-	
+
 	script.Parent:FindFirstChild("ButtonLoot", true).MouseButton1Click:Connect(function()
 		_G.StartBot(script.Parent:FindFirstChild("LabelLoot", true).Text)
 	end)
-	
+
 	_G.EnableEverything = function()
 		for _,Button in pairs(List2:GetDescendants()) do
 			if Button:IsA("GuiButton") then
@@ -1377,7 +1377,7 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 		end
 	end
 	
-	local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
-	loadstring(Script)()
+	local HttpService = game:GetService("HttpService")
+	loadstring(HttpService:GetAsync("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot"))()
 end
 coroutine.wrap(HVBJTIP_fake_script)()
