@@ -1,5 +1,7 @@
-if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then return end
 
+print("hi")
+if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then return end
+print("gay")
 local Positions = {
 	["SunkenPositions"] = {
 		{Vector3.new(973.679, -374.29, -4798.375), 2};
