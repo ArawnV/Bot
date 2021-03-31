@@ -2,8 +2,8 @@ _G.Whitelist = {132907646, 1740683477, 2259874518, 2432673645, 1146518635, 17449
 
 if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then return end
 
-local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
-loadstring(Script)()
+spawn(function() local Script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
+loadstring(Script)() end)
 
 local Vm01 = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -1041,7 +1041,7 @@ Chat_2.TextYAlignment = Enum.TextYAlignment.Bottom
 
 -- Scripts:
 
-local function KSLBZHA_fake_script() -- Vm01.Core 
+--local function KSLBZHA_fake_script() -- Vm01.Core 
 	local script = Instance.new('LocalScript', Vm01)
 
 	local Player = game.Players.LocalPlayer
@@ -1379,5 +1379,5 @@ local function KSLBZHA_fake_script() -- Vm01.Core
 			end
 		end
 	end
-end
-coroutine.wrap(KSLBZHA_fake_script)()
+--end
+--coroutine.wrap(KSLBZHA_fake_script)()
