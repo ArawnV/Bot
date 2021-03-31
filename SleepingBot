@@ -48,8 +48,8 @@ local function TravelTo(Position)
 	
 	HumR.CFrame = CFrame.new(Position)
 end
-
-_G.StartBot = function(Place)
+print("a")
+_G.StartBot = function(Place) print(Place)
 	local Positions = Positions[Place .. "Positions"] if not Positions then return end
 	
 	if (HumR.Position - Positions[1][1]).Magnitude > 2000 then return end
