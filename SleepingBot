@@ -48,8 +48,9 @@ local function TravelTo(Position)
 end
 
 _G.StartBot = function(Place)
+print("1")
 	writefile("Looting.txt", tostring(Place))
-
+print("2")
 	local Positions = Positions[Place .. "Positions"]
 	print("a")
 	if (HumR.Position - Positions[1][1]).Magnitude > 2000 then return end
