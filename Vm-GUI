@@ -1040,8 +1040,8 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 
 	if not table.find(_G.Whitelist, game.Players.LocalPlayer.UserId) then script.Parent:Destroy() return end
 	
-	local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
-	loadstring(script)()
+	pcall(function() local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
+	loadstring(script)() end)
 
 	local Player = game.Players.LocalPlayer
 	local Mouse = Player:GetMouse()
